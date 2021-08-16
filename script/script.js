@@ -1,45 +1,55 @@
 "use strict";
 
-const btnAbout = document.querySelector(".about");
-const sectionHero = document.querySelector("#section--hero");
+// const btnAbout = document.querySelector(".about");
+// const sectionHero = document.querySelector("#section--hero");
 
 const header = document.querySelector(".header");
 
 const nav = document.querySelector(".nav");
 const headerHeight = header.getBoundingClientRect().height;
+console.log(headerHeight);
+const stickyLogo = document.querySelector(".sticky-logo");
+const hamburger = document.querySelector(".hamburger-logo");
+console.log(stickyLogo);
+console.log(hamburger);
 
 /// SCROLL TO (DA RIPROGRAMMARE CON PIù ELEMENTI COME SEGUE)
 
-// document.querySelector('.nav__links').addEventListener('click', function(e){
-//     e.preventDefault();
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
 
-//     //Matching Strategy
-//     if (e.target.classList.contains('nav__link')){
-//     const id = e.target.getAttribute('href');
-//     document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-//     }
-//   })
-
-btnAbout.addEventListener("click", function (e) {
-  const sectHeroCoords = sectionHero.getBoundingClientRect();
-  sectionHero.scrollIntoView({ behavior: "smooth" });
+  //Matching Strategy
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 });
+
+// btnAbout.addEventListener("click", function (e) {
+//   const sectHeroCoords = sectionHero.getBoundingClientRect();
+//   sectionHero.scrollIntoView({ behavior: "smooth" });
+// });
 
 /// STICKY
 
-// const stickyNav = function (entries) {
-//   const [entry] = entries;
-//   // console.log(entry);
-//   if (!entry.isIntersecting) header.classList.add("sticky");
-//   else header.classList.remove("sticky");
-// };
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) {
+    stickyLogo.style.paddingRight = "25px";
+    hamburger.classList.remove("hamburger-hidden");
+  } else {
+    stickyLogo.style.paddingRight = "10px";
+    hamburger.classList.add("hamburger-hidden");
+  }
+};
 
-// const headerObserver = new IntersectionObserver(stickyNav, {
-//   root: null,
-//   threshold: 0,
-//   rootMargin: `-${headerHeight}px`,
-// });
-// headerObserver.observe(header);
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `${headerHeight}px`,
+});
+headerObserver.observe(header);
 
 // SLIDES
 
@@ -102,7 +112,7 @@ const slider = function () {
   };
 
   const init = function () {
-    goToSlide(0);
+    goToSlide(1);
     createDots();
     activateDot(0);
   };
@@ -132,3 +142,25 @@ const slider = function () {
 };
 
 slider();
+
+//////// REVEAL SECTIONS
+
+const allSection = document.querySelectorAll(".section");
+// console.log(allSection);
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSection.forEach(function (section) {
+  sectionObserver.observe(section);
+  // section.classList.add('section--hidden');
+});

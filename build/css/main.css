@@ -11,22 +11,39 @@ body {
 
 .container {
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.section--hidden {
+  opacity: 0;
+  -webkit-transform: translateY(8rem);
+          transform: translateY(8rem);
+}
+
+.section {
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
 }
 
 header {
   margin: 0;
-  height: 100px;
+  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: transparent;
 }
 
-header .logo img {
+header .sticky-logo img {
   width: 40px;
 }
 
@@ -52,25 +69,23 @@ header ul li.first-social {
 }
 
 header ul li a {
-  color: black;
-  text-decoration: none;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
 
-.flexbox {
+.header-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.logo {
+.sticky-logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,17 +98,24 @@ header ul li a {
   background-color: #52cf47;
   padding: 10px;
   border-radius: 30px;
+  position: fixed;
+  left: 5rem;
+  -webkit-transition: padding-right 400ms ease;
+  transition: padding-right 400ms ease;
+}
+
+.hamburger-hidden {
+  display: none;
 }
 
 .hamburger-logo {
-  display: none;
   content: "";
   background: #fff;
   height: 2px;
   width: 2.5rem;
   z-index: 1;
   position: relative;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .hamburger-logo::before {
@@ -118,12 +140,7 @@ header ul li a {
           transform: translateY(350%);
 }
 
-.header.sticky {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-img {
+video {
   width: 100%;
 }
 
@@ -134,8 +151,13 @@ img {
   line-height: 5rem;
 }
 
+img {
+  width: 100%;
+}
+
 .title-boxes {
   font-size: 2.5rem;
+  font-weight: 500;
 }
 
 .flex-boxes {
@@ -144,6 +166,9 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .breadcrumb {
@@ -161,7 +186,36 @@ img {
   margin: 0 20px 0 0px;
 }
 
-#section-slides {
+.box-card:nth-child(2n) {
+  margin-right: 0;
+}
+
+.link-projects {
+  text-align: right;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 0.5rem;
+}
+
+.link-projects a {
+  color: lightgrey;
+}
+
+.link-projects a span {
+  margin-right: 0.5rem;
+  -webkit-transition: color 250ms ease;
+  transition: color 250ms ease;
+  -webkit-transition: margin-right 250ms ease;
+  transition: margin-right 250ms ease;
+}
+
+.link-projects a span:hover {
+  color: #52cf47;
+  margin-right: 1.5rem;
+}
+
+#section--slides {
   margin: 250px auto;
 }
 
@@ -179,6 +233,7 @@ img {
   top: 0;
   width: 100%;
   height: 50rem;
+  padding: 0 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,25 +250,15 @@ img {
   transition: transform 1s, -webkit-transform 1s;
 }
 
-.slide > img {
-  /* Only for images that have different size than slide */
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .slider__btn {
   position: absolute;
   top: 50%;
   z-index: 10;
   border: none;
   background: rgba(255, 255, 255, 0.7);
-  font-family: inherit;
   color: #333;
-  border-radius: 50%;
   height: 5.5rem;
-  width: 5.5rem;
+  width: 10rem;
   font-size: 3.25rem;
   cursor: pointer;
 }

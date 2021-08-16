@@ -18,19 +18,22 @@
     <!----------------- HEADER ----------->
     <header class="header">
       <div class="container">
-        <div class="flexbox">
-          <div class="logo">
+        <div class="header-flex">
+          <div class="sticky-logo">
             <a href="#"><img src="src/images/logo.png" alt="logo" /></a>
             <a><p class="hamburger-logo"></p></a>
           </div>
-
           <nav class="nav">
-            <ul>
-              <li><a href="#section-hero" class="about">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Journal</a></li>
-              <li><a href="#">Contact</a></li>
+            <ul class="nav__links">
+              <li><a href="#section--hero" class="nav__link">About</a></li>
+              <li>
+                <a href="#section--content" class="nav__link">Services</a>
+              </li>
+              <li>
+                <a href="#section--slides" class="nav__link">Portfolio</a>
+              </li>
+              <li><a href="#" class="nav__link">Journal</a></li>
+              <li><a href="#" class="nav__link">Contact</a></li>
               <li class="first-social">
                 <a href="#"
                   ><svg
@@ -89,11 +92,16 @@
       </div>
     </header>
     <!----------------- HEADER END ----------->
-    <section class="video">
-      <img src="src/images/chabout.jpeg" />
+    <!----------------- VIDEO ----------->
+    <section class="section-video" id="section--video">
+      <video autoplay muted>
+        <source src="src/images/chame.mp4" type="video/mp4" />
+        <source src="src/images/chame.webm" type="video/webm" />
+      </video>
     </section>
+    <!----------------- VIDEO END ----------->
     <!-------------------HERO---------------->
-    <section class="hero" id="section--hero">
+    <section class="section section--hidden" id="section--hero">
       <div class="container">
         <h2 class="hero-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -103,7 +111,9 @@
         </h2>
       </div>
     </section>
-    <section class="section" id="section--content">
+    <!----------------- HERO END ----------->
+    <!----------------- CONTENT ----------->
+    <section class="section section--hidden" id="section--content">
       <div class="container">
         <h3 class="title-boxes">Our Work</h3>
         <div class="flex-boxes">
@@ -152,15 +162,20 @@
             </div>
           </div>
         </div>
+        <div class="link-projects">
+          <a href="#" class="link-text"><span>View all Projects</span>👉</a>
+        </div>
       </div>
     </section>
-    <section class="section" id="section-slides">
+    <!-----------FINE CONTENT-->
+    <!----------SLIDES------------>
+    <section class="section section--hidden" id="section--slides">
       <div class="slider">
         <div class="slide">
-          <img src="src/images/home-5.jpeg" alt="Photo 1" />
+          <img src="src/images/home-4.jpeg" alt="Photo 1" />
         </div>
         <div class="slide">
-          <img src="src/images/home-4.jpeg" alt="Photo 2" />
+          <img src="src/images/home-5.jpeg" alt="Photo 2" />
         </div>
         <div class="slide">
           <img src="src/images/home-3.jpeg" alt="Photo 3" />
