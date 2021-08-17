@@ -7,11 +7,14 @@ const header = document.querySelector(".header");
 
 const nav = document.querySelector(".nav");
 const headerHeight = header.getBoundingClientRect().height;
-console.log(headerHeight);
+
 const stickyLogo = document.querySelector(".sticky-logo");
 const hamburger = document.querySelector(".hamburger-logo");
-console.log(stickyLogo);
-console.log(hamburger);
+
+/// Random Colors
+
+const color = Math.trunc(Math.random() * 255);
+console.log(color);
 
 /// SCROLL TO (DA RIPROGRAMMARE CON PIù ELEMENTI COME SEGUE)
 
@@ -34,7 +37,6 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  console.log(entry);
   if (!entry.isIntersecting) {
     stickyLogo.style.paddingRight = "25px";
     hamburger.classList.remove("hamburger-hidden");

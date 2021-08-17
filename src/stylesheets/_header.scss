@@ -5,9 +5,11 @@ header {
   height: 120px;
   display: flex;
   align-items: center;
+  z-index: 5;
 
   .sticky-logo img {
     width: 40px;
+    z-index: 5;
   }
 
   ul {
@@ -18,16 +20,22 @@ header {
       padding: 0 0 0 40px;
       display: flex;
       align-items: center;
+      color: $white;
 
       &.first-social {
         padding: 0 0 0 80px;
       }
 
       a {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 100s;
         text-transform: uppercase;
+        color: $white;
       }
     }
+  }
+  nav {
+    z-index: 5;
   }
 }
 
@@ -45,8 +53,9 @@ header {
   padding: 10px;
   border-radius: 30px;
   position: fixed;
-  left: 5rem;
+  left: 15rem;
   transition: padding-right 400ms ease;
+  z-index: 60;
 
   // padding-right: 30px;
 }
