@@ -109,8 +109,8 @@ header nav {
   border-radius: 30px;
   position: fixed;
   left: 15rem;
-  -webkit-transition: padding-right 400ms ease;
-  transition: padding-right 400ms ease;
+  -webkit-transition: padding-right 1000ms ease;
+  transition: padding-right 1000ms ease;
   z-index: 60;
 }
 
@@ -355,5 +355,70 @@ img {
   /* background-color: #fff; */
   background-color: #d81515;
   opacity: 1;
+}
+
+#section--journal {
+  margin: 250px auto;
+}
+
+.flex-boxes-journal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box-card-journal {
+  width: 48%;
+  margin-right: 20px;
+}
+
+.box-card-journal:nth-child(2n) {
+  margin-right: 0;
+}
+
+.journal-title h3 {
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+.journal-title p {
+  margin: 50px 0;
+  height: 20px;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.journal-title .link-text {
+  margin-top: 250px;
+}
+
+#section--statement {
+  background-image: url("/src/images/profpicham.jpeg") no-repeat;
+  background-attachment: fixed;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.quote {
+  text-align: center;
+  margin: auto;
+  font-size: 2.2rem;
+  font-family: "Martel", serif;
+  max-width: 750px;
+  color: #52cf47;
+}
+
+.quote .signature {
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=main.css.map */

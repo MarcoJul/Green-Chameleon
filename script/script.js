@@ -11,10 +11,11 @@ const headerHeight = header.getBoundingClientRect().height;
 const stickyLogo = document.querySelector(".sticky-logo");
 const hamburger = document.querySelector(".hamburger-logo");
 
+const statement = document.querySelector("#section--statement");
+
 /// Random Colors
 
 const color = Math.trunc(Math.random() * 255);
-console.log(color);
 
 /// SCROLL TO (DA RIPROGRAMMARE CON PIù ELEMENTI COME SEGUE)
 
@@ -27,11 +28,6 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
-
-// btnAbout.addEventListener("click", function (e) {
-//   const sectHeroCoords = sectionHero.getBoundingClientRect();
-//   sectionHero.scrollIntoView({ behavior: "smooth" });
-// });
 
 /// STICKY
 
@@ -153,6 +149,10 @@ const revealSection = function (entries, observer) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) return;
+  // if (entry.target.id === "section--journal") {
+  //   statement.style.backgroundAttachment = "scroll";
+  // }
+  // console.log(entry.target.id);
   entry.target.classList.remove("section--hidden");
   observer.unobserve(entry.target);
 };

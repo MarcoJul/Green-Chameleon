@@ -1,0 +1,21 @@
+#section--statement {
+  background-image: url("/src/images/profpicham.jpeg") no-repeat;
+  background-attachment: fixed;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.quote {
+  text-align: center;
+  margin: auto;
+  font-size: 2.2rem;
+  font-family: "Martel", serif;
+  max-width: 750px;
+  color: $primary-color;
+
+  .signature {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+}
