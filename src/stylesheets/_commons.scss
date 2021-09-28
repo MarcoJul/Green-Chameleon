@@ -9,6 +9,15 @@ body {
   // background-color: slategray;
 }
 
+.body-night {
+  background-color: #111019;
+  transition: 0.8s;
+}
+.night-color {
+  color: white;
+  transition: 0.8s;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;

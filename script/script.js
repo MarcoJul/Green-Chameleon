@@ -166,3 +166,17 @@ allSection.forEach(function (section) {
   sectionObserver.observe(section);
   // section.classList.add('section--hidden');
 });
+
+//// NIGHT MODE
+
+const toggleSwitch = document.querySelector(".switch__1");
+const sun = document.querySelector(".sun");
+const night = [...document.querySelectorAll(".night")];
+
+toggleSwitch.addEventListener("click", function () {
+  document.body.classList.toggle("body-night");
+  night.forEach((el) => el.classList.toggle("night-color"));
+  sun.classList.toggle("sunset");
+});
+
+console.log(sun);
