@@ -1,3 +1,10 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
@@ -7,10 +14,12 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .body-night {
-  background-color: #111019;
+  background-color: #2e3237;
   -webkit-transition: 0.8s;
   transition: 0.8s;
 }
@@ -56,9 +65,16 @@ header {
   z-index: 5;
 }
 
-header .sticky-logo img {
-  width: 40px;
-  z-index: 5;
+header .header-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header ul {
@@ -79,10 +95,6 @@ header ul li {
   color: #fff;
 }
 
-header ul li.first-social {
-  padding: 0 0 0 80px;
-}
-
 header ul li a {
   font-size: 1rem;
   font-weight: 100s;
@@ -92,18 +104,33 @@ header ul li a {
 
 header nav {
   z-index: 5;
-}
-
-.header-flex {
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+}
+
+.nav__social {
+  padding: 0 0 0 80px;
+}
+
+svg {
+  height: 30px;
+  width: 30px;
+  fill: white;
+  padding: 2px;
+}
+
+svg:hover {
+  fill: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .sticky-logo {
@@ -121,13 +148,19 @@ header nav {
   border-radius: 30px;
   position: fixed;
   left: 15rem;
-  -webkit-transition: padding-right 1000ms ease;
-  transition: padding-right 1000ms ease;
-  z-index: 60;
+  -webkit-transition: padding-right 2s;
+  transition: padding-right 2s;
+  z-index: 10;
+}
+
+.sticky-logo img {
+  width: 40px;
 }
 
 .hamburger-hidden {
   display: none;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .hamburger-logo {
@@ -138,6 +171,8 @@ header nav {
   z-index: 1;
   position: relative;
   margin-left: 20px;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .hamburger-logo::before {
@@ -435,12 +470,11 @@ img {
 }
 
 footer {
-  height: 700px;
   position: relative;
 }
 
 .container-footer {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -477,14 +511,23 @@ footer {
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: bold;
   font-size: 1rem;
-  width: 180px;
-  height: 35px;
+  letter-spacing: 1px;
+  padding: 15px 30px;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .btn-touch span {
   margin-right: 10px;
+}
+
+.btn-night {
+  background-color: white;
+  color: black;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .contacts {
@@ -577,10 +620,23 @@ input:checked[type="checkbox"]:before {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-color: #ff797c;
+  background-color: #fabf40;
   position: absolute;
   top: 70px;
   right: 300px;
+  z-index: -1;
+}
+
+.moon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: lightgray;
+  -webkit-box-shadow: 0px 0px 50px lightgray;
+          box-shadow: 0px 0px 50px lightgray;
+  position: absolute;
+  top: 0px;
+  right: 0px;
   z-index: -1;
 }
 

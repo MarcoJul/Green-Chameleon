@@ -1,11 +1,10 @@
 footer {
-  height: 700px;
   position: relative;
-  //   background-color: rgb(184, 200, 216);
+  // background: linear-gradient($primary-color, $study-color);
 }
 
 .container-footer {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -35,13 +34,21 @@ footer {
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: bold;
   font-size: 1rem;
-  width: 180px;
-  height: 35px;
+  letter-spacing: 1px;
+  padding: 15px 30px;
   span {
     margin-right: 10px;
   }
+
+  transition: 0.8s;
+}
+
+.btn-night {
+  background-color: white;
+  color: black;
+  transition: 0.8s;
 }
 
 .contacts {
@@ -115,10 +122,22 @@ input:checked[type="checkbox"]:before {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-color: #ff797c;
+  background-color: #fabf40;
   position: absolute;
   top: 70px;
   right: 300px;
+  z-index: -1;
+}
+
+.moon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(211, 211, 211);
+  box-shadow: 0px 0px 50px rgb(211, 211, 211);
+  position: absolute;
+  top: 0px;
+  right: 0px;
   z-index: -1;
 }
 
@@ -127,3 +146,6 @@ input:checked[type="checkbox"]:before {
   right: -150px;
   transition: 0.8s ease-in;
 }
+
+// .moonrise {
+// }

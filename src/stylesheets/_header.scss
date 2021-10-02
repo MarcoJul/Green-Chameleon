@@ -7,9 +7,10 @@ header {
   align-items: center;
   z-index: 5;
 
-  .sticky-logo img {
-    width: 40px;
-    z-index: 5;
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   ul {
@@ -21,11 +22,6 @@ header {
       display: flex;
       align-items: center;
       color: $white;
-
-      &.first-social {
-        padding: 0 0 0 80px;
-      }
-
       a {
         font-size: 1rem;
         font-weight: 100s;
@@ -36,13 +32,27 @@ header {
   }
   nav {
     z-index: 5;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.header-flex {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.nav__social {
+  padding: 0 0 0 80px;
+}
+
+svg {
+  height: 30px;
+  width: 30px;
+  fill: white;
+  padding: 2px;
+
+  &:hover {
+    fill: black;
+    transition: 0.5s;
+  }
 }
 
 .sticky-logo {
@@ -54,14 +64,19 @@ header {
   border-radius: 30px;
   position: fixed;
   left: 15rem;
-  transition: padding-right 1000ms ease;
-  z-index: 60;
+  transition: padding-right 2s;
+  z-index: 10;
+
+  img {
+    width: 40px;
+  }
 
   // padding-right: 30px;
 }
 
 .hamburger-hidden {
   display: none;
+  transition: 2s;
 }
 
 .hamburger-logo {
@@ -73,6 +88,7 @@ header {
   z-index: 1;
   position: relative;
   margin-left: 20px;
+  transition: 2s;
 
   &::before {
     content: "";

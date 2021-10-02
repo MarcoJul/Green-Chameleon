@@ -172,11 +172,13 @@ allSection.forEach(function (section) {
 const toggleSwitch = document.querySelector(".switch__1");
 const sun = document.querySelector(".sun");
 const night = [...document.querySelectorAll(".night")];
+const ctaBtn = document.querySelector(".btn-touch");
 
 toggleSwitch.addEventListener("click", function () {
   document.body.classList.toggle("body-night");
   night.forEach((el) => el.classList.toggle("night-color"));
   sun.classList.toggle("sunset");
+  ctaBtn.classList.toggle("btn-night");
 });
 
 console.log(sun);
