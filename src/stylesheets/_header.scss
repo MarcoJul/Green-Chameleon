@@ -18,12 +18,12 @@ header {
 
     li {
       list-style-type: none;
-      padding: 0 0 0 40px;
+      padding: 0 0 0 20px;
       display: flex;
       align-items: center;
       color: $white;
       a {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 100s;
         text-transform: uppercase;
         color: $white;
@@ -43,10 +43,10 @@ header {
   padding: 0 0 0 80px;
 }
 
-svg {
+nav svg {
   height: 30px;
   width: 30px;
-  fill: white;
+  fill: $white;
   padding: 2px;
 
   &:hover {
@@ -59,18 +59,19 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $primary-color;
-  padding: 10px;
-  border-radius: 30px;
+  background-color: $secondary-color;
+  border-radius: 40px;
   position: fixed;
   left: 15rem;
-  transition: padding-right 2s;
+  transition: padding-right 1s;
   z-index: 10;
 
-  img {
-    width: 40px;
+  .logo {
+    height: 80px;
+    width: 87.5px;
+    margin: 5px 0 0 5px;
+    transform: scale(0.5);
   }
-
   // padding-right: 30px;
 }
 
@@ -115,3 +116,71 @@ svg {
 //   background-color: rgba(255, 255, 255, 0.95);
 // }
 /// FINE HEADER
+
+//// NAV HOVER
+
+a {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: $white;
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.nav__link {
+  padding: 10px 20px;
+  transition: color 0.25s;
+  &::before,
+  &::after {
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    color: $white;
+  }
+  // Hover styles
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: $white; // Make borders visible
+    border-right-color: $white;
+    transition: width 0.25s ease-out,
+      // Width expands first
+      height 0.25s ease-out 0.25s; // And then height
+  }
+
+  &:hover::after {
+    border-bottom-color: $white; // Make borders visible
+    border-left-color: $white;
+    transition: border-color 0s ease-out 0.5s,
+      // Wait for ::before to finish before showing border
+      width 0.25s ease-out 0.5s,
+      // And then exanding width
+      height 0.25s ease-out 0.75s; // And finally height
+  }
+}

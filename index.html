@@ -32,7 +32,10 @@
       <div class="container">
         <div class="header-flex">
           <div class="sticky-logo">
-            <a href="#"><img src="src/images/logo.png" alt="logo" /></a>
+            <a href="#"
+              ><svg class="logo">
+                <use href="./src/images/icons.svg#logo-chameleon"></use></svg
+            ></a>
             <a><p class="hamburger-logo"></p></a>
           </div>
           <nav class="nav">
@@ -227,7 +230,7 @@
     </section>
     <!-- FINE JOURNAL -->
     <!---FOOTER-->
-    <footer>
+    <footer class="main-footer">
       <div class="container-footer">
         <div class="flex-footer">
           <div class="weather">
@@ -250,8 +253,12 @@
             </p>
           </div>
         </div>
-        <div class="sun"></div>
-        <div class="moon"></div>
+        <div class="sun-movement">
+          <div class="sun"></div>
+        </div>
+        <div class="moon-movement">
+          <div class="moon"></div>
+        </div>
         <div class="bottom-footer">
           <div class="link-list">
             <ul>

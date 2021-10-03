@@ -1,11 +1,26 @@
 footer {
-  position: relative;
-  // background: linear-gradient($primary-color, $study-color);
+  height: 800px;
+  overflow: hidden;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 1)
+  );
+  // transition: 2s;
+}
+
+.background-footer {
+  background: linear-gradient(#2e3237 60%, rgb(145, 145, 145));
+  transition: 2s;
 }
 
 .container-footer {
   width: 80%;
+  height: 100%;
   margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .flex-footer {
@@ -118,17 +133,36 @@ input:checked[type="checkbox"]:before {
   transform: scale(1.1);
 }
 
+.sun-movement {
+  width: 800px;
+  height: 725px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  // background-color: rgb(154, 188, 206);
+  z-index: 2;
+  transform-origin: bottom left;
+}
 .sun {
   height: 100px;
   width: 100px;
   border-radius: 50%;
   background-color: #fabf40;
   position: absolute;
-  top: 70px;
-  right: 300px;
-  z-index: -1;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
 }
-
+.moon-movement {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  bottom: -300px;
+  left: 0;
+  // background-color: rgb(154, 188, 206);
+  z-index: 5;
+  transform-origin: top left;
+}
 .moon {
   height: 100px;
   width: 100px;
@@ -136,16 +170,31 @@ input:checked[type="checkbox"]:before {
   background-color: rgb(211, 211, 211);
   box-shadow: 0px 0px 50px rgb(211, 211, 211);
   position: absolute;
-  top: 0px;
+  bottom: 0px;
   right: 0px;
-  z-index: -1;
+  z-index: 2;
 }
 
 .sunset {
-  top: 300px;
-  right: -150px;
-  transition: 0.8s ease-in;
+  transform: rotate(90deg);
+  transform-origin: bottom left;
+  transition: 2s ease-in;
 }
 
-// .moonrise {
-// }
+.sunrise {
+  transform: rotate(0deg);
+  transform-origin: bottom left;
+  transition: 3s ease-out;
+}
+
+.moonrise {
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  transition: 4s ease-in;
+}
+
+.moonset {
+  transform: rotate(0deg);
+  transform-origin: top left;
+  transition: 2s ease-in;
+}

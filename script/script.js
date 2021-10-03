@@ -37,7 +37,7 @@ const stickyNav = function (entries) {
     stickyLogo.style.paddingRight = "25px";
     hamburger.classList.remove("hamburger-hidden");
   } else {
-    stickyLogo.style.paddingRight = "10px";
+    stickyLogo.style.paddingRight = "0px";
     hamburger.classList.add("hamburger-hidden");
   }
 };
@@ -170,15 +170,33 @@ allSection.forEach(function (section) {
 //// NIGHT MODE
 
 const toggleSwitch = document.querySelector(".switch__1");
-const sun = document.querySelector(".sun");
+const sun = document.querySelector(".sun-movement");
+const moon = document.querySelector(".moon-movement");
 const night = [...document.querySelectorAll(".night")];
 const ctaBtn = document.querySelector(".btn-touch");
+const footer = document.querySelector(".main-footer");
 
 toggleSwitch.addEventListener("click", function () {
   document.body.classList.toggle("body-night");
   night.forEach((el) => el.classList.toggle("night-color"));
-  sun.classList.toggle("sunset");
   ctaBtn.classList.toggle("btn-night");
-});
+  footer.classList.toggle("background-footer");
 
-console.log(sun);
+  if (sun.classList.contains("sunset")) {
+    sun.classList.add("sunrise");
+    sun.classList.remove("sunset");
+  } else {
+    sun.classList.remove("sunrise");
+    sun.classList.add("sunset");
+  }
+
+  if (moon.classList.contains("moonrise")) {
+    console.log("è giorno");
+    moon.classList.add("moonset");
+    moon.classList.remove("moonrise");
+  } else {
+    console.log("è notte");
+    moon.classList.remove("moonset");
+    moon.classList.add("moonrise");
+  }
+});
