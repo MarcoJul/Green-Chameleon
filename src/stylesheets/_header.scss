@@ -18,7 +18,7 @@ header {
 
     li {
       list-style-type: none;
-      padding: 0 0 0 20px;
+      padding: 0 0 0 40px;
       display: flex;
       align-items: center;
       color: $white;
@@ -119,68 +119,68 @@ nav svg {
 
 //// NAV HOVER
 
-a {
-  background: none;
-  border: 0;
-  cursor: pointer;
-  color: $white;
-  position: relative;
-  vertical-align: middle;
+// a {
+//   background: none;
+//   border: 0;
+//   cursor: pointer;
+//   color: $white;
+//   position: relative;
+//   vertical-align: middle;
 
-  &::before,
-  &::after {
-    box-sizing: inherit;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-}
+//   &::before,
+//   &::after {
+//     box-sizing: inherit;
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
 
-.nav__link {
-  padding: 10px 20px;
-  transition: color 0.25s;
-  &::before,
-  &::after {
-    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-    border: 1px solid transparent;
-    width: 0;
-    height: 0;
-  }
-  &::before {
-    top: 0;
-    left: 0;
-  }
-  &::after {
-    bottom: 0;
-    right: 0;
-  }
+// .nav__link {
+//   padding: 10px 20px;
+//   transition: color 0.25s;
+//   &::before,
+//   &::after {
+//     // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+//     border: 1px solid transparent;
+//     width: 0;
+//     height: 0;
+//   }
+//   &::before {
+//     top: 0;
+//     left: 0;
+//   }
+//   &::after {
+//     bottom: 0;
+//     right: 0;
+//   }
 
-  &:hover {
-    color: $white;
-  }
-  // Hover styles
-  &:hover::before,
-  &:hover::after {
-    width: 100%;
-    height: 100%;
-  }
+//   &:hover {
+//     color: $white;
+//   }
+//   // Hover styles
+//   &:hover::before,
+//   &:hover::after {
+//     width: 100%;
+//     height: 100%;
+//   }
 
-  &:hover::before {
-    border-top-color: $white; // Make borders visible
-    border-right-color: $white;
-    transition: width 0.25s ease-out,
-      // Width expands first
-      height 0.25s ease-out 0.25s; // And then height
-  }
+//   &:hover::before {
+//     border-top-color: $white; // Make borders visible
+//     border-right-color: $white;
+//     transition: width 0.25s ease-out,
+//       // Width expands first
+//       height 0.25s ease-out 0.25s; // And then height
+//   }
 
-  &:hover::after {
-    border-bottom-color: $white; // Make borders visible
-    border-left-color: $white;
-    transition: border-color 0s ease-out 0.5s,
-      // Wait for ::before to finish before showing border
-      width 0.25s ease-out 0.5s,
-      // And then exanding width
-      height 0.25s ease-out 0.75s; // And finally height
-  }
-}
+//   &:hover::after {
+//     border-bottom-color: $white; // Make borders visible
+//     border-left-color: $white;
+//     transition: border-color 0s ease-out 0.5s,
+//       // Wait for ::before to finish before showing border
+//       width 0.25s ease-out 0.5s,
+//       // And then exanding width
+//       height 0.25s ease-out 0.75s; // And finally height
+//   }
+// }
