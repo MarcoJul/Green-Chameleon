@@ -1,0 +1,14 @@
+@import 'default/base';
+
+
+@media only screen and (min-width: 992px) {
+    @import 'lg-up/base';
+  }
+  
+  @media only screen and (min-width: 768px) {
+   @import 'md-up/base';
+  }
+  
+  @media only screen and (max-width: 767px) {
+   @import 'sm-down/base';
+  }
