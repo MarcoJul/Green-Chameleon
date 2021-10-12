@@ -1,0 +1,38 @@
+header nav {
+  display: none;
+}
+
+.sticky-logo {
+  left: 3rem;
+}
+
+.video-container {
+  span {
+    display: block;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+
+.hero-text {
+  margin: 150px auto;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.flex-boxes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.box-card {
+  width: 90%;
+  margin: 20px auto;
+
+  &:nth-child(2n) {
+    margin: 20px auto;
+  }
+}

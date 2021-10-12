@@ -1,7 +1,6 @@
 //// HEADER
 
 header {
-  margin: 0;
   height: 120px;
   display: flex;
   align-items: center;
@@ -65,12 +64,12 @@ nav svg {
   left: 15rem;
   transition: padding-right 1s;
   z-index: 10;
+  padding: 16px 10px;
 
   .logo {
-    height: 80px;
-    width: 87.5px;
-    margin: 5px 0 0 5px;
-    transform: scale(0.5);
+    height: 44px;
+    width: 68px;
+    transform: scale(0.6) translateX(-5px);
   }
   // padding-right: 30px;
 }
@@ -184,5 +183,3 @@ nav svg {
 //       height 0.25s ease-out 0.75s; // And finally height
 //   }
 // }
-
-

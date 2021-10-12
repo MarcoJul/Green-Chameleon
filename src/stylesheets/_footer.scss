@@ -140,7 +140,7 @@ input:checked[type="checkbox"]:before {
   bottom: 30px;
   left: 0;
   // background-color: rgb(154, 188, 206);
-  z-index: 2;
+  z-index: -1;
   transform-origin: bottom left;
 }
 .sun {
@@ -198,7 +198,6 @@ input:checked[type="checkbox"]:before {
   transform-origin: top left;
   transition: 2s ease-in;
 }
-
 
 @media only screen and (min-width: 992px) {
   //IN PROGRESS//
