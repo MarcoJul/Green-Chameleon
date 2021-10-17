@@ -13,10 +13,6 @@ const hamburger = document.querySelector(".hamburger-logo");
 
 const statement = document.querySelector("#section--statement");
 
-/// Random Colors
-
-const color = Math.trunc(Math.random() * 255);
-
 /// SCROLL TO (DA RIPROGRAMMARE CON PIù ELEMENTI COME SEGUE)
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {

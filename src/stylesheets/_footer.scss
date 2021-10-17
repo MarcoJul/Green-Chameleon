@@ -38,6 +38,7 @@ footer {
 .footer-message {
   font-size: 1.5rem;
   font-weight: 300;
+  z-index: 5;
   h3 {
     margin-bottom: 50px;
   }
@@ -140,7 +141,6 @@ input:checked[type="checkbox"]:before {
   bottom: 30px;
   left: 0;
   // background-color: rgb(154, 188, 206);
-  z-index: -1;
   transform-origin: bottom left;
 }
 .sun {
@@ -151,7 +151,7 @@ input:checked[type="checkbox"]:before {
   position: absolute;
   top: 0px;
   right: 0px;
-  z-index: 2;
+  z-index: 4;
 }
 .moon-movement {
   width: 400px;
@@ -197,16 +197,4 @@ input:checked[type="checkbox"]:before {
   transform: rotate(0deg);
   transform-origin: top left;
   transition: 2s ease-in;
-}
-
-@media only screen and (min-width: 992px) {
-  //IN PROGRESS//
-}
-
-@media only screen and (min-width: 768px) {
-  //IN PROGRESS//
-}
-
-@media only screen and (max-width: 767px) {
-  //IN PROGRESS//
 }

@@ -9,6 +9,7 @@ img {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 20px;
+  color: $black-text;
 }
 
 .flex-boxes {
@@ -27,6 +28,7 @@ img {
 .message p {
   font-size: 3rem;
   margin-top: 10px;
+  color: $black-text;
 }
 
 .box-card {
@@ -45,7 +47,7 @@ img {
   font-weight: 100;
   letter-spacing: 0.5rem;
   a {
-    color: lightgrey;
+    color: $black-text;
 
     span {
       margin-right: 0.5rem;
@@ -58,16 +60,4 @@ img {
       }
     }
   }
-}
-
-@media only screen and (min-width: 992px) {
-  //IN PROGRESS//
-}
-
-@media only screen and (min-width: 768px) {
-  //IN PROGRESS//
-}
-
-@media only screen and (max-width: 767px) {
-  //IN PROGRESS//
 }

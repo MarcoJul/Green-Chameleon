@@ -36,7 +36,7 @@ body {
 }
 
 a {
-  color: #000;
+  color: #495057;
   text-decoration: none;
 }
 
@@ -127,7 +127,7 @@ nav svg {
 }
 
 nav svg:hover {
-  fill: black;
+  fill: #c0dae7;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -244,6 +244,7 @@ video {
   font-weight: 300;
   font-size: 3.5rem;
   line-height: 5rem;
+  color: #495057;
 }
 
 img {
@@ -255,6 +256,7 @@ img {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 20px;
+  color: #495057;
 }
 
 .flex-boxes {
@@ -278,6 +280,7 @@ img {
 .message p {
   font-size: 3rem;
   margin-top: 10px;
+  color: #495057;
 }
 
 .box-card {
@@ -298,7 +301,7 @@ img {
 }
 
 .link-projects a {
-  color: lightgrey;
+  color: #495057;
 }
 
 .link-projects a span {
@@ -436,6 +439,7 @@ img {
   margin-top: 50px;
   font-weight: 500;
   font-size: 2.5rem;
+  color: #495057;
 }
 
 .journal-title p {
@@ -527,6 +531,7 @@ footer {
 .footer-message {
   font-size: 1.5rem;
   font-weight: 300;
+  z-index: 5;
 }
 
 .footer-message h3 {
@@ -650,7 +655,6 @@ input:checked[type="checkbox"]:before {
   position: absolute;
   bottom: 30px;
   left: 0;
-  z-index: -1;
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
 }
@@ -663,7 +667,7 @@ input:checked[type="checkbox"]:before {
   position: absolute;
   top: 0px;
   right: 0px;
-  z-index: 2;
+  z-index: 4;
 }
 
 .moon-movement {
@@ -724,6 +728,53 @@ input:checked[type="checkbox"]:before {
           transform-origin: top left;
   -webkit-transition: 2s ease-in;
   transition: 2s ease-in;
+}
+
+@media only screen and (min-width: 992px) {
+  .nav__links a {
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .nav__links a::before, .nav__links a::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+  }
+  .nav__links a:hover {
+    color: #c0dae7;
+  }
+  .nav__links a::before, .nav__links a::after {
+    top: 0;
+    left: 0;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  .nav__links a::before {
+    border-top: 1px solid #c0dae7;
+    border-bottom: 1px solid #c0dae7;
+    -webkit-transform: scale3D(0, 1, 1);
+            transform: scale3D(0, 1, 1);
+  }
+  .nav__links a::after {
+    border-right: 1px solid #c0dae7;
+    border-left: 1px solid #c0dae7;
+    -webkit-transform: scale3D(1, 0, 1);
+            transform: scale3D(1, 0, 1);
+  }
+  .nav__links a:hover::before, .nav__links a:hover::after {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
 }
 
 @media only screen and (max-width: 767px) {
