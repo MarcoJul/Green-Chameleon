@@ -51,9 +51,7 @@ const slider = function () {
   const slides = document.querySelectorAll(".slide");
   const btnLeft = document.querySelector(".slider__btn--left");
   const btnRight = document.querySelector(".slider__btn--right");
-
   const dotContainer = document.querySelector(".dots");
-
   let curSlide = 0;
   const maxSlide = slides.length;
 
@@ -106,7 +104,7 @@ const slider = function () {
   };
 
   const init = function () {
-    goToSlide(1);
+    goToSlide(0);
     createDots();
     activateDot(0);
   };
@@ -139,29 +137,28 @@ slider();
 
 //////// REVEAL SECTIONS
 
-const allSection = document.querySelectorAll(".section");
-// console.log(allSection);
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
+// const allSection = document.querySelectorAll(".section");
+// // console.log(allSection);
+// const revealSection = function (entries, observer) {
+//   const [entry] = entries;
 
-  if (!entry.isIntersecting) return;
-  // if (entry.target.id === "section--journal") {
-  //   statement.style.backgroundAttachment = "scroll";
-  // }
-  // console.log(entry.target.id);
-  entry.target.classList.remove("section--hidden");
-  observer.unobserve(entry.target);
-};
+//   if (!entry.isIntersecting) return;
+//   // if (entry.target.id === "section--journal") {
+//   //   statement.style.backgroundAttachment = "scroll";
+//   // }
+//   entry.target.classList.remove("section--hidden");
+//   observer.unobserve(entry.target);
+// };
 
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//   root: null,
+//   threshold: 0.15,
+// });
 
-allSection.forEach(function (section) {
-  sectionObserver.observe(section);
-  // section.classList.add('section--hidden');
-});
+// allSection.forEach(function (section) {
+//   sectionObserver.observe(section);
+//   // section.classList.add('section--hidden');
+// });
 
 //// NIGHT MODE
 

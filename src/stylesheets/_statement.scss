@@ -1,21 +1,37 @@
 #section--statement {
-  background-image: url("/src/images/profpicham.jpeg") no-repeat;
-  background-attachment: fixed;
   height: 800px;
   display: flex;
   justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.background-statement {
+  background-image: url("/src/images/profpicham.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 .quote {
   text-align: center;
   margin: auto;
-  font-size: 2.2rem;
+  font-size: 5rem;
   font-family: "Martel", serif;
-  max-width: 750px;
-  color: $primary-color;
+  max-width: 75%;
+  color: rgb(0, 228, 129);
+  mix-blend-mode: difference;
 
   .signature {
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+    margin-top: 30px;
   }
 }
