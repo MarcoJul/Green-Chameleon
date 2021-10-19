@@ -27,6 +27,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 5;
 }
 
 .weather {
@@ -160,7 +161,6 @@ input:checked[type="checkbox"]:before {
   bottom: -300px;
   left: 0;
   // background-color: rgb(154, 188, 206);
-  z-index: 5;
   transform-origin: top left;
 }
 .moon {

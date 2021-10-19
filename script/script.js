@@ -137,28 +137,28 @@ slider();
 
 //////// REVEAL SECTIONS
 
-// const allSection = document.querySelectorAll(".section");
-// // console.log(allSection);
-// const revealSection = function (entries, observer) {
-//   const [entry] = entries;
+const allSection = document.querySelectorAll(".section");
+// console.log(allSection);
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
 
-//   if (!entry.isIntersecting) return;
-//   // if (entry.target.id === "section--journal") {
-//   //   statement.style.backgroundAttachment = "scroll";
-//   // }
-//   entry.target.classList.remove("section--hidden");
-//   observer.unobserve(entry.target);
-// };
+  if (!entry.isIntersecting) return;
+  // if (entry.target.id === "section--journal") {
+  //   statement.style.backgroundAttachment = "scroll";
+  // }
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
 
-// const sectionObserver = new IntersectionObserver(revealSection, {
-//   root: null,
-//   threshold: 0.15,
-// });
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
 
-// allSection.forEach(function (section) {
-//   sectionObserver.observe(section);
-//   // section.classList.add('section--hidden');
-// });
+allSection.forEach(function (section) {
+  sectionObserver.observe(section);
+  // section.classList.add('section--hidden');
+});
 
 //// NIGHT MODE
 
@@ -193,3 +193,90 @@ toggleSwitch.addEventListener("click", function () {
     moon.classList.add("moonrise");
   }
 });
+
+/// FETCHING API WEATHER AND TIME
+
+// const position = navigator.geolocation.getCurrentPosition();
+
+const getPosition = function () {
+  if (navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(loadMap.bind(this), function () {
+      alert("Could not get your position");
+    });
+};
+
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error(`Request took too long! Timeout after ${s} second`));
+    }, s * 1000);
+  });
+};
+
+const getJSON = async function (url) {
+  try {
+    const fetchPro = fetch(url);
+    const res = await Promise.race([fetchPro, timeout(10)]);
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+const loadMap = async function (position) {
+  const container = document.querySelector(".weather");
+
+  const { latitude } = position.coords;
+  const { longitude } = position.coords;
+
+  const coords = [latitude, longitude];
+  const API_URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${coords}`;
+  const data = await getJSON(API_URL);
+  console.log(data);
+
+  const { location } = data;
+  console.log(location);
+
+  const { current } = data;
+  console.log(current);
+  // const hours = Date.getHours(location.localtime);
+  // console.log(hours);
+
+  const geoData = {
+    city: location.name,
+    time: location.localtime,
+    weather: current.condition.text,
+    temperature: current.temp_c,
+  };
+
+  let html = `
+     <h4>
+       It's ${geoData.time.slice(-4)},<br />${geoData.weather}<br />
+       & ${geoData.temperature}° in ${geoData.city}
+     </h4>
+     `;
+
+  console.log(html);
+  console.log(container);
+  container.innerHTML = html;
+};
+
+//
+
+// console.log(html);
+
+getPosition();
+
+/// WEATHER API
+
+const API_KEY = "9cd6049b26e34153af2141727211710";
+
+// const fetch = async function (id) {
+//   try {
+//     const data = await getJSON(`${API_URL}/${API_KEY}`);
+//     {
+
+//     }
