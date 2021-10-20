@@ -263,7 +263,7 @@ const loadMap = async function (position) {
 
   let html = `
      <h4>
-       It's ${geoData.time.slice(-4)},<br />${geoData.weather}<br />
+       It's ${geoData.time.slice(-5)},<br />${geoData.weather}<br />
        & ${geoData.temperature}° in ${geoData.city}
      </h4>
      `;
