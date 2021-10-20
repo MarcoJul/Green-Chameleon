@@ -222,6 +222,15 @@ const getJSON = async function (url) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (err) {
+    const container = document.querySelector(".weather");
+    let html = `
+     <h4>
+       It's 5:56,<br />Sunny<br />
+       & 15° in Milan
+     </h4>
+     `;
+
+    container.innerHTML = html;
     throw err;
   }
 };
