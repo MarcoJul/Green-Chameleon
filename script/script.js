@@ -233,7 +233,7 @@ const loadMap = async function (position) {
   const { longitude } = position.coords;
 
   const coords = [latitude, longitude];
-  const API_URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${coords}`;
+  const API_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${coords}`;
   const data = await getJSON(API_URL);
   console.log(data);
 
