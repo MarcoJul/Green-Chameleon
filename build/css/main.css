@@ -475,7 +475,7 @@ video {
 }
 
 .background-statement {
-  background-image: url("/src/images/profpicham.jpeg");
+  background-image: url("src/images/profpicham.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
